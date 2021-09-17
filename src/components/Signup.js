@@ -32,11 +32,10 @@ const Signup = () => {
 	console.log('signup', currentUser);
 
 	return (
-		<div className='h-screen flex items-center justify-center flex-col'>
+		<div className='h-screen items-center justify-center flex flex-col'>
 			{error !== '' && <h1>{error}</h1>}
-			<form className='w-96 h-96 bg-green-200 flex items-center justify-around flex-col border-2 border-solid border-black shadow-2xl mx-auto'>
-				<h1>SignUp</h1>
-				{<h1>{currentUser !== null && currentUser.email}</h1>}
+			<form className='border border-solid rounded-lg m-2 flex flex-col items-center justify-center space-y-3 h-96 w-96'>
+				<h1>Signup</h1>
 				<label>Enter Email</label>
 				<input
 					className='w-3/4 h-8 border-black border border-solid rounded-sm'
@@ -61,8 +60,11 @@ const Signup = () => {
 				>
 					SignUp
 				</button>
+				<h2>Already Have an Account? </h2>
+				<Link to='/login'>
+					<button className='w-40 bg-green-500 h-8'>LogIn</button>
+				</Link>
 			</form>
-			<Link to='/login'>Login</Link>
 		</div>
 	);
 };
